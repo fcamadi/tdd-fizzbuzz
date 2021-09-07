@@ -14,4 +14,8 @@ public class FizzBuzzShould {
         assertEquals("2", new FizzBuzz().convert(2));
     }
 
+    @Test
+    void convert_4_to_4() {
+        assertEquals("4", new FizzBuzz().convert(4));
+    }
 }
