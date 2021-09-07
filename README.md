@@ -1,0 +1,1 @@
+Initial TDD kata from Codurance Katalyst
