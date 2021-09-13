@@ -12,4 +12,9 @@ public class FizzBuzzShould {
     void convert_number_to_FizzBuzz_string(int input, String expectedOutput) {
         assertEquals(expectedOutput, new FizzBuzz().convert(input));
     }
+
+    @Test
+    void convert_3_to_Fizz() {
+        assertEquals("Fizz", new FizzBuzz().convert(3));
+    }
 }
