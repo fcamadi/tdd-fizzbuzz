@@ -14,18 +14,14 @@ public class FizzBuzzShould {
     }
 
     @ParameterizedTest
-    @CsvSource({ "3,Fizz", "6,Fizz", "300,Fizz" })
+    @CsvSource({ "3,Fizz", "6,Fizz", "33,Fizz" })
     void convert_multiple_of_3_to_Fizz_string(int input, String expectedOutput) {
         assertEquals(expectedOutput, new FizzBuzz().convert(input));
     }
 
-    @Test
-    void convert_5_to_Buzz() {
-        assertEquals("Buzz", new FizzBuzz().convert(5));
-    }
-
-    @Test
-    void convert_10_to_Buzz() {
-        assertEquals("Buzz", new FizzBuzz().convert(10));
+    @ParameterizedTest
+    @CsvSource({ "5,Buzz", "10,Buzz", "25,Buzz" })
+    void convert_multiple_of_5_to_Buzz_string(int input, String expectedOutput) {
+        assertEquals(expectedOutput, new FizzBuzz().convert(input));
     }
 }
