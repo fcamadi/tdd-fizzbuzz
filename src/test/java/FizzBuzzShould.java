@@ -18,4 +18,9 @@ public class FizzBuzzShould {
     void convert_multiple_of_3_to_Fizz_string(int input, String expectedOutput) {
         assertEquals(expectedOutput, new FizzBuzz().convert(input));
     }
+
+    @Test
+    void convert_5_to_Buzz() {
+        assertEquals("Buzz", new FizzBuzz().convert(5));
+    }
 }
