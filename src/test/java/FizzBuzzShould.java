@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -27,9 +28,9 @@ public class FizzBuzzShould {
 
 
     @ParameterizedTest
-    @CsvSource({ "15,FizzBuzz", "30,FizzBuzz", "45,FizzBuzz" })
-    void convert_multiple_of_3_and_5_to_FizzBuzz_string(int input, String expectedOutput) {
-        assertEquals(expectedOutput, new FizzBuzz().convert(input));
+    @ValueSource(ints = { 15,30,45 })
+    void convert_multiple_of_3_and_5_to_FizzBuzz_string(int input) {
+        assertEquals("FizzBuzz", new FizzBuzz().convert(input));
     }
 
 
@@ -39,4 +40,6 @@ public class FizzBuzzShould {
     void convert_from_1_to_15_to_FizzBuzz_string(int input, String expectedOutput) {
         assertEquals(expectedOutput, new FizzBuzz().convert(input));
     }
+
+
 }
