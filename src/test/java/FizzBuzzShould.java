@@ -13,13 +13,9 @@ public class FizzBuzzShould {
         assertEquals(expectedOutput, new FizzBuzz().convert(input));
     }
 
-    @Test
-    void convert_3_to_Fizz() {
-        assertEquals("Fizz", new FizzBuzz().convert(3));
-    }
-
-    @Test
-    void convert_6_to_Fizz() {
-        assertEquals("Fizz", new FizzBuzz().convert(6));
+    @ParameterizedTest
+    @CsvSource({ "3,Fizz", "6,Fizz", "300,Fizz" })
+    void convert_multiple_of_3_to_Fizz_string(int input, String expectedOutput) {
+        assertEquals(expectedOutput, new FizzBuzz().convert(input));
     }
 }
